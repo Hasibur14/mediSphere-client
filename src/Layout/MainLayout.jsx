@@ -5,9 +5,9 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="">
             <Navbar></Navbar>
-            <div className="">
+            <div className="min-h-[calc(100vh-285px)]">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
