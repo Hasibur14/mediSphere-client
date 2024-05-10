@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom";
-
 import registerImg from '../../assets/images/register.jpg';
 import titleImg from '../../assets/images/title.png';
 

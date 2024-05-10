@@ -59,7 +59,7 @@ const Navbar = () => {
 
 
     return (
-        <div className={`fixed z-10 w-full shadow-md ${theme === 'synthwave' ? 'dark' : 'bg-neutral-100'}`}>
+        <div className={`fixed z-10 w-full  ${theme === 'synthwave' ? 'dark' : ''}`}>
             <div className="navbar flex justify-between lg:mx-16">
                 <div className="navbar">
                     <div className="dropdown">
@@ -83,7 +83,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar md:flex lg:flex space-x-4 lg:ml-36">
+                <div className="navbar md:flex lg:flex space-x-2 lg:ml-36">
                     <div className="hidden lg:flex">
                         <Link to='/login'>
                             <button className=" px-3 py-2 font-bold rounded-md text-lg hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">LOG IN</button>
