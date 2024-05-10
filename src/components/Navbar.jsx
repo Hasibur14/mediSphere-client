@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import title from '../assets/images/title.png';
 
@@ -7,6 +7,11 @@ const Navbar = () => {
 
 
     const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+        document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
 
 
     const handleToggle = (e) => {
@@ -18,23 +23,43 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-1 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Home</span> </NavLink>
+                <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Home</span> </NavLink>
             </li>
             <li>
-                <NavLink to="/service" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-1 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Service</span> </NavLink>
+                <NavLink to="/service" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Service</span> </NavLink>
+            </li>
+            <li className="dropdown dropdown-content z-50">
+                <NavLink to="/dashboard" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Dashboard  </span> </NavLink>
+                <ul
+                    tabIndex={0}
+                    className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+                >
+                    <li>
+                        <Link to='/addService' className='justify-between'>Add Service</Link>
+                    </li>
+                    <li>
+                        <Link to='/manageService'>Manage Service</Link>
+                    </li>
+                    <li>
+                        <Link to='/bookedService'>Booked Service </Link>
+                    </li>
+                    <li>
+                        <Link to='/serviceToDo'>Service To Do</Link>
+                    </li>
+
+                </ul>
             </li>
             <li>
-                <NavLink to="/dashboard" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-1 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Dashboard  </span> </NavLink>
-            </li>
-            <li>
-                <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-1 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Contact Us</span> </NavLink>
+                <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Contact Us</span> </NavLink>
             </li>
         </>
     );
 
 
+
+
     return (
-        <div className={` fixed z-10 w-full shadow-md ${theme === 'synthwave' ? 'dark' : 'bg-neutral-100'}`}>
+        <div className={`fixed z-10 w-full shadow-md ${theme === 'synthwave' ? 'dark' : 'bg-neutral-100'}`}>
             <div className="navbar flex justify-between lg:mx-16">
                 <div className="navbar">
                     <div className="dropdown">
@@ -46,12 +71,12 @@ const Navbar = () => {
 
                             <div className="">
                                 <Link to='/register'>
-                                    <button className="bg-[#F00] p-2 font-bold rounded-md  text-white">Register</button>
+                                    <button className="bg-purple-600 p-2 font-bold rounded-md  text-white">Register</button>
                                 </Link>
                             </div>
                         </ul>
                     </div>
-                    <a className=" text-xl lg:text-3xl mr-14 lg:mr-0 gap-0 font-bold   lg:ml-28"> <img className="h-full w-56" src={title} alt="" /></a>
+                    <img className="h-full w-56 " src={title} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal px-1 space-x-8 text-[16px] font-bold">
@@ -59,20 +84,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar md:flex lg:flex space-x-4 lg:ml-36">
-
-                    {/* Conditional rendering based on user authentication */}
                     <div className="hidden lg:flex">
-
                         <Link to='/login'>
                             <button className=" px-3 py-2 font-bold rounded-md text-lg hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">LOG IN</button>
                         </Link>
 
                     </div>
-                    <div className=" h-[25px] bg-[#EEEEEE] text-fuchsia-600 hidden lg:block">|</div>
+                    <div className=" h-[25px] bg-fuchsia-700 text-purple-600 hidden lg:block">|</div>
                     <div className="hidden lg:flex">
-                        <Link to='/register'>
-                            <button className="bg-transparent px-2 py-2 font-bold rounded-md text-lg text-purple-600 hover:bg-pru border-2 border-purple-600 hover:text-white">Register</button>
-                        </Link>
+                       
+                            <Link to='/register' className="bg-transparent px-2 py-2 font-bold rounded-md text-lg text-purple-600 hover:bg-pru border-2 border-purple-600 hover:text-white">Register</Link>
+                      
                     </div>
                     <label className="cursor-pointer grid place-items-center">
                         <input onChange={handleToggle} type="checkbox" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" />

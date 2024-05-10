@@ -5,12 +5,16 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
     return (
-        <div className="">
-            <Navbar></Navbar>
+        <div className="font-lato">
+            <div className="h-20">
+                <Navbar></Navbar>
+            </div>
             <div className="min-h-[calc(100vh-285px)]">
                 <Outlet></Outlet>
             </div>
-            <Footer></Footer>
+            <div>
+                <Footer></Footer>
+            </div>
         </div>
     );
 };
