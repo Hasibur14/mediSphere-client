@@ -1,8 +1,65 @@
-import { Link } from 'react-router-dom';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/images/login.jpg';
 import titleImg from '../../assets/images/title.png';
+import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../provider/AuthProvider';
+
+
 
 const Login = () => {
+
+    const auth = getAuth(app)
+    const [user, setUser] = useState(null)
+    const googleProvider = new GoogleAuthProvider();
+    const [showPassword, setShowPassword] = useState(false)
+    const { signIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+
+
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+
+        signIn(email, password)
+            .then(result => {
+                console.log(result)
+                toast.success('User login successfully');
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error('Incorrect email or password. Please try again.');
+            });
+    };
+
+    // For Google 
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                const user = result.user;
+                console.log(user);
+                setUser(loggedInUser)
+                toast.success('User login successfully');
+                navigate(location?.state ? location.state : '/');
+
+            })
+            .catch(error => {
+                console.log('error', error.message)
+                toast.error(error.message);
+            })
+    }
+
+
+
     return (
         <div className='flex  justify-center items-center dark:bg-gray-800 my-16'>
             <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
@@ -26,7 +83,7 @@ const Login = () => {
                         Welcome back!
                     </p>
 
-                    <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+                    <div onClick={handleGoogleSignIn} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
                         <div className='px-4 py-2'>
                             <svg className='w-6 h-6' viewBox='0 0 40 40'>
                                 <path
@@ -62,7 +119,7 @@ const Login = () => {
 
                         <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
                     </div>
-                    <form >
+                    <form onSubmit={handleLogin} >
                         <div className='mt-4'>
                             <label
                                 className='block mb-2 text-sm font-medium text-gray-600 '
@@ -88,14 +145,19 @@ const Login = () => {
                                     Password
                                 </label>
                             </div>
+                            <div className="mb-4 relative ">
+                                <input
+                                    className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    id="" required />
+                                <span className="absolute top-3 right-2" onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                    }
+                                </span>
+                            </div>
 
-                            <input
-                                id='loggingPassword'
-                                autoComplete='current-password'
-                                name='password'
-                                className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                                type='password'
-                            />
                         </div>
                         <div className='mt-6'>
                             <button

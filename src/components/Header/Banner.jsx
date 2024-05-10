@@ -11,7 +11,7 @@ const Banner = () => {
                     <div className="lg:flex items-center">
                         <div className='lg:w-1/2 mb-5 lg:mb-0 space-y-4'>
                             <div className="w-3/5">
-                                <h1 className="text-2xl lg:text-5xl font-extrabold"><span className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient">Your New Smile Starts Here!</span></h1>
+                                <h1 className="text-2xl lg:text-5xl font-extrabold"><span className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient">Your New Life Starts Here!</span></h1>
                             </div>
                             <p className="py-6 text-lg w-4/5">Welcome to Medisphere Consultation Services! Our platform connects you with experienced and qualified doctors who are dedicated to providing personalized care and expert medical advice. Whether you are seeking guidance on a specific health concern, need a second opinion, or require ongoing management of a chronic condition, our team of healthcare professionals is here to support you every step of the way.</p>
                             <div>

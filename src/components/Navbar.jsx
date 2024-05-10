@@ -56,8 +56,6 @@ const Navbar = () => {
     );
 
 
-
-
     return (
         <div className={`fixed z-10 w-full  ${theme === 'synthwave' ? 'dark' : ''}`}>
             <div className="navbar flex justify-between lg:mx-16">
