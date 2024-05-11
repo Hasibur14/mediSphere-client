@@ -11,6 +11,8 @@ import ManageService from "../pages/Dashboard/ManageService";
 import ServiceToDo from "../pages/Dashboard/ServiceToDo";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import SingleService from "../pages/SingleService";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: '/allService',
                 element: <AllService></AllService>
+            },
+            {
+                path: '/services/:id',
+                element: <PrivetRoute> <SingleService></SingleService></PrivetRoute>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/services/${params.id}`)
             },
             {
                 path: '/dashboard',
