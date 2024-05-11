@@ -6,7 +6,6 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const AddService = () => {
     const { user } = useContext(AuthContext)
-    // console.log(user)
 
     const handleAddService = async e => {
         e.preventDefault()
@@ -31,10 +30,7 @@ const AddService = () => {
             console.log(error)
             toast.error(error.message)
         }
-    }
-
-
-
+    };
 
     return (
         <div className='relative h-[750px] my-10'>
