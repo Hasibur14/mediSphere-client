@@ -1,16 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { Link, useLoaderData } from "react-router-dom";
+
 
 const SingleService = () => {
 
     const service = useLoaderData()
-    const { serviceName, serviceArea, image, price, description, providerEmail, providerImage, providerName } = service;
+    const {_id, serviceName, serviceArea, image, price, description, providerEmail, providerImage, providerName } = service;
 
     return (
-        <div className="container mx-auto my-16">
-            <section className="py-4 md:py-8 dark:bg-gray-100 dark:text-gray-900 shadow-md border">
+        <div className="container mx-auto my-16 p-4 md:p-0">
+            <section className="py-4 md:py-8 dark:bg-gray-100 dark:text-gray-900 shadow-md border rounded-md">
                 <div className="grid  grid-cols-1 px-6 mx-auto lg:px-6 md:grid-cols-2 md:divide-x-2">
                     <div className=" py-6 md:py-10 md:px-6 lg:px-20 space-y-4">
-                        <h1 className="text-4xl font-bold">Consultation By</h1>
+                        <Link to='/'> <button className='flex  hover:bg-purple-500 hover:text-white px-3 py-3 rounded-md border border-purple-600 shadow-md'> <span className="text-xl mr-2"><IoArrowBackCircleOutline /></span>Back Home</button></Link>
+                        <h1 className="text-3xl md:text-4xl font-bold">Consultation By</h1>
                         <h4 className="text-2xl mt-6 font-semibold"><span className="font-bold">Name:  </span>{providerName}</h4>
                         <div className="space-y-4 text-xl">
                             <p className="flex items-center">
@@ -27,13 +30,13 @@ const SingleService = () => {
                                 <span>{providerEmail}</span>
                             </p>
                             <div>
-                                <img className="lg:w-44 rounded-md border-2 border-purple-600 p-2" src={providerImage} alt="" />
+                                <img className="md:w-52 h-56 rounded-md border-2 border-purple-600 p-2" src={providerImage} alt="" />
                             </div>
                         </div>
                     </div>
                     <section className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
                         <div>
-                            <img className="w-full h-[400px] rounded-md" src={image} alt="image not found..." />
+                            <img className="w-full md:h-[400px] rounded-md" src={image} alt="image not found..." />
                         </div>
                         <div className="space-y-4 lg:ml-8 text-xl">
                             <div className=" space-y-3 ">
@@ -43,12 +46,12 @@ const SingleService = () => {
                                 <p> <span className="font-bold">Location: </span>{service.serviceArea}</p>
                             </div>
                             <div>
-                                <a href="#_" className="inline-flex overflow-hidden text-white bg-gray-900 rounded group">
+                                <Link to={`/service/${_id}`} className="inline-flex overflow-hidden text-white bg-gray-900 rounded group">
                                     <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                                     </span>
                                     <span className="pl-4 pr-5 py-2.5">Book Now</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </section>

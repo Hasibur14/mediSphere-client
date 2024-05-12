@@ -89,10 +89,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar md:flex lg:flex space-x-2 lg:ml-36">
                     <div className="hidden lg:flex">
-                        <div className="mr-2">
+                        <div className="mr-2 ">
                             {user && (
-                                <div className="tooltip " data-tip={user.displayName}>
-                                    <button className="w-12 rounded-full border border-purple-600"><img className="rounded-full" src={user.photoURL} alt="" /></button>
+                                <div className="tooltip  tooltip-primary" data-tip={user.displayName}>
+                                    <div className="rounded-full border border-red-600"><img className="rounded-full w-12 h-12" src={user.photoURL} alt="image is not found" /></div>
                                 </div>
                             )}
                         </div>

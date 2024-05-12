@@ -3,6 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import AllService from "../pages/AllService";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
+import BookServiceAdd from "../pages/BookServiceAdd";
 import ContactUs from "../pages/ContactUs";
 import AddService from "../pages/Dashboard/AddService";
 import BookedService from "../pages/Dashboard/BookedService";
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/services/${params.id}`)
             },
             {
+                path: '/service/:id',
+                element: <BookServiceAdd></BookServiceAdd>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/service/${params.id}`)
+            },
+            {
                 path: '/dashboard',
                 element: <Dashboard></Dashboard>
             },
@@ -43,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/manageService',
-                element: <ManageService></ManageService>
+                element: <PrivetRoute><ManageService></ManageService></PrivetRoute>
             },
             {
                 path: '/bookedService',
@@ -64,8 +70,7 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
-            }
-
+            },
 
         ]
     }

@@ -13,7 +13,7 @@ const AddService = () => {
         const serviceName = form.serviceName.value;
         const serviceArea = form.serviceArea.value;
         const image = form.image.value;
-        const price = form.price.value;
+        const price = parseFloat(form.price.value)
         const description = form.description.value;
 
         const providerEmail = user.email
@@ -33,13 +33,13 @@ const AddService = () => {
     };
 
     return (
-        <div className='relative h-[750px] my-10'>
+        <div className='relative md:h-[750px] my-10 p-4 md:p-0'>
             <div className='absolute w-full h-full'>
                 <img src={bgImg2} alt="" className="w-full h-full object-cover" />
             </div>
             <div className='flex justify-center items-center relative '>
                 <section className="container p-10 lg:p-20 mx-auto rounded-md shadow-md bg-opacity-40 bg-gray-600 mt-10">
-                    <h2 className="lg:text-3xl font-bold capitalize text-center bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient ">Add Service</h2>
+                    <h2 className="text-3xl font-bold capitalize text-center bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient ">ADD SERVICE</h2>
                     <form onSubmit={handleAddService}>
                         <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                             <div>
@@ -67,8 +67,7 @@ const AddService = () => {
                         </div>
                         <div className='mt-5'>
                             <label className="text-white font-semibold" >Description</label>
-                            <input id="description" name='description' type="text" placeholder='Description'
-                                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <textarea id="bio" name='description' placeholder="description" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"></textarea>
                         </div>
 
                         <div className="flex justify-center mt-6">
