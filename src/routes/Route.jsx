@@ -5,7 +5,6 @@ import AllService from "../pages/AllService";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import BookServiceAdd from "../pages/BookServiceAdd";
-import ContactUs from "../pages/ContactUs";
 import AddService from "../pages/Dashboard/AddService";
 import BookedService from "../pages/Dashboard/BookedService";
 import Dashboard from "../pages/Dashboard/Dashboard";
@@ -59,10 +58,6 @@ const router = createBrowserRouter([
             {
                 path: '/serviceToDo',
                 element: <ServiceToDo></ServiceToDo>
-            },
-            {
-                path: '/contact',
-                element: <ContactUs></ContactUs>
             },
             {
                 path: '/login',

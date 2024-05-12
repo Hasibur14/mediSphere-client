@@ -55,9 +55,6 @@ const Navbar = () => {
                     </ul>
                 </li>
             }
-            <li>
-                <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Contact Us</span> </NavLink>
-            </li>
         </>
     );
 
