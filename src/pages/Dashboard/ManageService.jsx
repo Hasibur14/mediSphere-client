@@ -62,7 +62,7 @@ const ManageService = () => {
         <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {
                 bookServices.map(bookService => (
-                    <div key={bookService._id} className=" w-full max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
+                    <div key={bookService._id} className=" w-full h-[600px] max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
                         <img className="object-cover object-center w-full h-56" src={bookService.image} alt="image not found" />
 
                         <div className="flex justify-center bg-neutral-200">

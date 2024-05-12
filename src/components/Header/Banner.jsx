@@ -14,7 +14,7 @@ const Banner = () => {
                             <div className="w-3/5">
                                 <h1 className="text-2xl lg:text-5xl font-extrabold"><span className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient">Your New Life Starts Here!</span></h1>
                             </div>
-                            <p className="py-6 text-lg w-4/5">Welcome to Medisphere Consultation Services! Our platform connects you with experienced and qualified doctors who are dedicated to providing personalized care and expert medical advice. Whether you are seeking guidance on a specific health concern, need a second opinion, or require ongoing management of a chronic condition, our team of healthcare professionals is here to support you every step of the way.</p>
+                            <p className="py-6 md:text-lg lg:w-4/5">Welcome to Medisphere Consultation Services! Our platform connects you with experienced and qualified doctors who are dedicated to providing personalized care and expert medical advice. Whether you are seeking guidance on a specific health concern, need a second opinion, or require ongoing management of a chronic condition, our team of healthcare professionals is here to support you every step of the way.</p>
                             <div>
                                 <Link to='/allService' className="relative inline-block text-lg group">
                                     <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight transition-colors duration-300 ease-out  rounded-md text-white bg-purple-600">

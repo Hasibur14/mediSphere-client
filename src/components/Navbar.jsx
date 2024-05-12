@@ -34,8 +34,14 @@ const Navbar = () => {
                 <NavLink to="/allService" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>All Service</span> </NavLink>
             </li>
             {
-                user && <li className="dropdown dropdown-content z-50">
-                    <NavLink to="/dashboard" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} > <span>Dashboard  </span> </NavLink>
+                user && <li
+                    className="dropdown dropdown-content z-50">
+                    <NavLink to="/dashboard"
+                        className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-white  px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600" : "hover:text-purple-600"} >
+                        <span
+                        >Dashboard
+                        </span>
+                    </NavLink>
                     <ul
                         tabIndex={0}
                         className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  rounded-box w-52'>
@@ -70,7 +76,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32 space-y-2">
                             {links}
 
-                            <div className="">
+                            <div className="mt-4">
                                 <Link to='/register'>
                                     <button className="bg-purple-600 p-2 font-bold rounded-md  text-white">Register</button>
                                 </Link>
