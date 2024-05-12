@@ -62,7 +62,7 @@ const ManageService = () => {
         <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {
                 bookServices.map(bookService => (
-                    <div key={bookServices._id} className=" w-full max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
+                    <div key={bookService._id} className=" w-full max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
                         <img className="object-cover object-center w-full h-56" src={bookService.image} alt="image not found" />
 
                         <div className="flex justify-center bg-gray-900">
@@ -87,9 +87,24 @@ const ManageService = () => {
                                     <h1 className="px-2 text-sm">{bookService.serviceArea}</h1>
                                 </div>
                             </div>
-                            <div className="md:flex justify-between mt-4">
-                                <Link to={`/artCraftUpdate/`} className='flex w-28  text-white  px-4 py-2 rounded-md bg-sky-500'> <span className="text-xl mr-2"><MdOutlineBrowserUpdated /></span>Update</Link>
-                                <button onClick={() => handleDelete(bookService._id)} className='flex w-28 bg-[#EA4744] text-white  px-4 py-2 rounded-md'> <span className="text-xl mr-2"><AiOutlineDelete /></span>  Delete</button>
+                            <div
+                                className="md:flex justify-between mt-4">
+                                <Link to={`/serviceUpdate/${bookService._id}`}
+                                    className='flex w-28  text-white  px-4 py-2 rounded-md bg-sky-500'>
+                                    <span className="text-xl mr-2">
+                                        <MdOutlineBrowserUpdated />
+                                    </span>
+                                    Update
+                                </Link>
+
+                                <button
+                                    onClick={() => handleDelete(bookService._id)}
+                                    className='flex w-28 bg-[#EA4744] text-white  px-4 py-2 rounded-md'>
+                                    <span className="text-xl mr-2">
+                                        <AiOutlineDelete />
+                                    </span>
+                                    Delete
+                                </button>
                             </div>
                         </div>
                     </div>

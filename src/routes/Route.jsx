@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
+import ServiceUpdate from "../components/ServiceUpdate";
 import AllService from "../pages/AllService";
 import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            {
+                path: '/serviceUpdate/:id',
+                element: <ServiceUpdate></ServiceUpdate>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/serviceUpdate/${params.id}`)
+            }
 
         ]
     }
