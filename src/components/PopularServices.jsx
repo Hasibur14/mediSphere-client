@@ -28,7 +28,7 @@ const PopularServices = () => {
             <div className="text-center justify-center my-10">
                 <h2 className="md:text-5xl font-bold ">Popular Service</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-24 p-4 md:p-0">
                 {
                     services.slice(0, 6).map(service => (
                         <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5]" data-aos="fade-up"

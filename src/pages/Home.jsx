@@ -3,7 +3,7 @@ import PopularServices from "../components/PopularServices";
 
 const Home = () => {
     return (
-        <div className="mt-10">
+        <div className="mt-7">
             <Banner></Banner>
             <PopularServices></PopularServices>
         </div>
