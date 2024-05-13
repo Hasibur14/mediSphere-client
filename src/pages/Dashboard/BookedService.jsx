@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import notFoundImg from '../../assets/images/not- found.png';
 import { AuthContext } from "../../provider/AuthProvider";
 
@@ -26,6 +27,9 @@ const BookedService = () => {
 
     return (
         <div className="container mx-auto my-16 border rounded-md">
+             <Helmet>
+                <title>BookedService || MediSphere</title>
+            </Helmet>
             <div className="text-center p-4">
                 <h2 className="text-3xl font-bold ">Booked service</h2>
             </div>

@@ -100,17 +100,17 @@ const Navbar = () => {
                         <div>
                             {
                                 user ?
-                                    <button onClick={handleSignOut} className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">LOG OUT</button>
+                                    <button onClick={handleSignOut} className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">Log out</button>
                                     :
                                     <Link to='/login'>
-                                        <button className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">LOG IN</button>
+                                        <button className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">Sign in</button>
                                     </Link>
                             }
                         </div>
                     </div>
                     <div className=" h-[25px] bg-fuchsia-700 text-purple-600 hidden lg:block">|</div>
                     <div className="hidden lg:flex">
-                        <Link to='/register' className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">REGISTER</Link>
+                        <Link to='/register' className=" px-2 py-2 font-bold rounded-md  hover:bg-transparent border-2  text-purple-600 hover:bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 hover:text-white">Sign up</Link>
                     </div>
                     <label className="cursor-pointer grid place-items-center">
                         <input onChange={handleToggle} type="checkbox" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" />

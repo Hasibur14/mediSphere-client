@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Appointment from "../components/Appointment";
 import FeatureCategory from "../components/FeatureCategory";
 import Banner from "../components/Header/Banner";
@@ -8,6 +9,9 @@ import WorkingProcess from "../components/WorkingProcess";
 const Home = () => {
     return (
         <div className="mt-7">
+            <Helmet>
+                <title>Home || MediSphere</title>
+            </Helmet>
             <Banner></Banner>
             <FeatureCategory></FeatureCategory>
             <PopularServices></PopularServices>

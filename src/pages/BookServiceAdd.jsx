@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useContext, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import bgImg from '../assets/images/bg2.png';
@@ -48,6 +49,9 @@ const BookServiceAdd = () => {
     return (
         <>
             <div className='relative md:h-[950px] my-10 p-4 md:p-0'>
+            <Helmet>
+                <title>BookServiceAdd || MediSphere</title>
+            </Helmet>
                 <div className='absolute w-full h-full'>
                     <img src={bgImg} alt="" className="w-full h-full object-cover" />
                 </div>

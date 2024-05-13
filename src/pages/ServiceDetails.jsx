@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const ServiceDetails = () => {
 
     return (
         <div className="container mx-auto my-16 p-4 md:p-0">
+             <Helmet>
+                <title>ServiceDetails || MediSphere</title>
+            </Helmet>
             <section className="py-4 md:py-8 dark:bg-gray-100 dark:text-gray-900 shadow-md border rounded-md">
                 <div className="grid  grid-cols-1 px-6 mx-auto lg:px-6 md:grid-cols-2 md:divide-x-2">
                     <div className=" py-6 md:py-10 md:px-6 lg:px-20 space-y-4">

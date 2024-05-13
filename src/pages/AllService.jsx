@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 
@@ -22,6 +23,9 @@ const AllService = () => {
 
     return (
         <div className="container mx-auto my-10">
+             <Helmet>
+                <title>AllService || MediSphere</title>
+            </Helmet>
             <div className="grid grid-cols-1 gap-6 p-4 lg:p-0">
                 {services.map(service => (
                     <section key={service._id} className="border-2 rounded-lg hover:scale-105 transition duration-300">

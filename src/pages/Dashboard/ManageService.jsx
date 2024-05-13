@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -60,6 +61,9 @@ const ManageService = () => {
 
     return (
         <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 p-4 md:p-0 ">
+             <Helmet>
+                <title>ManageService || MediSphere</title>
+            </Helmet>
             {
                 bookServices.map(bookService => (
                     <div key={bookService._id} className=" w-full md:h-[590px] max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border hover:scale-105 transition duration-300 hover:border-purple-600">

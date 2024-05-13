@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import bgImg2 from '../assets/images/bg2.png';
@@ -39,6 +40,9 @@ const ServiceUpdate = () => {
 
     return (
         <div className='relative md:h-[750px] my-10 p-4 md:p-0'>
+             <Helmet>
+                <title>ServiceUpdate || MediSphere</title>
+            </Helmet>
             <div className='absolute w-full h-full'>
                 <img src={bgImg2} alt="" className="w-full h-full object-cover" />
             </div>
