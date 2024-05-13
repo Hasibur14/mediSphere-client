@@ -1,6 +1,4 @@
-// import person1 from '../assets/images/client-1.JPG';
-// import person2 from '../assets/images/client-2.JPG';
-// import person3 from '../assets/images/client-3.jpeg';
+import { BiSolidQuoteLeft } from "react-icons/bi";
 
 const PatientsFeedback = () => {
     return (
@@ -8,13 +6,13 @@ const PatientsFeedback = () => {
             <div className="flex justify-between items-center mx-5">
                 <div data-aos="fade-right" data-aos-duration="3000">
                     <h3 className='text-purple-500 text-xl font-bold'>Testimonial</h3>
-                    <h1 className="text-2xl md:text-4xl font-bold opacity-75 mb-10">What Our Patients Says</h1>
+                    <h1 className="text-2xl md:text-4xl font-bold opacity-75 ">What Our Patients Says</h1>
                 </div>
-                <div className='w-28 lg:w-[200px]'>
-                    <img src='' alt="" className='' />
+                <div >
+                <BiSolidQuoteLeft className="lg:text-[200px] text-purple-400 opacity-20"/>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5 md:m-0 lg:m-0  ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 m-5 md:m-0 lg:m-0  ">
                 <div className="shadow-lg p-10 rounded-lg hover:border hover:border-purple-600" data-aos="fade-right" data-aos-duration="3000">
                     <p>Users value websites that offer educational resources on health topics. They might say the website provides valuable information that helps them understand their health conditions and treatment options better.</p>
                     <div className="flex items-center mt-8">

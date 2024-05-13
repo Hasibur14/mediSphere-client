@@ -28,7 +28,7 @@ const PopularServices = () => {
             <div className="text-center justify-center my-10">
                 <h2 className="md:text-5xl font-bold ">Popular Service</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-24 p-4 md:p-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-24 p-4 md:p-0">
                 {
                     services.slice(0, 6).map(service => (
                         <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5] hover:scale-105 transition duration-300" data-aos="fade-up"
@@ -112,8 +112,8 @@ const PopularServices = () => {
                     ))
                 }
             </div>
-            <div>
-                <Link to='/allService' className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md hover:text-white text-center mt-10 md:ml-[350px] lg:ml-[700px]">
+            <div className="">
+                <Link to='/allService' className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md hover:text-white text-center mt-10 ml-28 md:ml-[350px] lg:ml-[700px] ">
                     <span className="w-full h-full bg-gradient-to-br from-purple-600 via-fuchsia-600 to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-fuchsia-600 group-hover:to-violet-500 absolute"></span>
                     <span className="relative px-6 py-3 transition-all ease-out bg-white rounded-md group-hover:bg-opacity-0 duration-400">
                         <span className="relative">Show All</span>
