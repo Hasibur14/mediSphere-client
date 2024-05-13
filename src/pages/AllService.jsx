@@ -24,7 +24,7 @@ const AllService = () => {
         <div className="container mx-auto my-10">
             <div className="grid grid-cols-1 gap-6 p-4 lg:p-0">
                 {services.map(service => (
-                    <section key={service._id} className="border-2 rounded-lg">
+                    <section key={service._id} className="border-2 rounded-lg hover:scale-105 transition duration-300">
                         <div className="md:flex space-x-4 lg:space-x-16 p-3">
                             <div className="md:w-3/12 ">
                                 <img className="rounded-xl w-full h-44" src={service.image} alt="" />

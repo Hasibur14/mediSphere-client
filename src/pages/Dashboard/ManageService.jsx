@@ -59,20 +59,20 @@ const ManageService = () => {
 
 
     return (
-        <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 p-4 md:p-0">
+        <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 p-4 md:p-0 ">
             {
                 bookServices.map(bookService => (
-                    <div key={bookService._id} className=" w-full md:h-[600px] max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border">
+                    <div key={bookService._id} className=" w-full md:h-[590px] max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 border hover:scale-105 transition duration-300 hover:border-purple-600">
                         <img className="object-cover object-center w-full h-56" src={bookService.image} alt="image not found" />
 
-                        <div className="flex justify-center bg-neutral-200">
+                        <div className="flex justify-center bg-neutral-200 py-2">
                             <img className="w-36" src={title} alt="" />
                         </div>
 
                         <div className="px-6 py-4 text-lg">
                             <h1 className="text-xl font-semibold text-gray-800 dark:text-white">{bookService.serviceName}</h1>
 
-                            <p className="py-2 text-gray-700 dark:text-gray-400">{bookService.description}</p>
+                            <p className="py-2 text-gray-700 dark:text-gray-400">{bookService.description.substring(0, 220) + '......'}</p>
 
                             <div className="md:flex justify-between">
                                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">

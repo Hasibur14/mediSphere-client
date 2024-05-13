@@ -31,7 +31,7 @@ const PopularServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-24 p-4 md:p-0">
                 {
                     services.slice(0, 6).map(service => (
-                        <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5]" data-aos="fade-up"
+                        <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5] hover:scale-105 transition duration-300" data-aos="fade-up"
                             data-aos-anchor-placement="center-bottom">
                             <div className="flex flex-col">
                                 <div className="relative h-62 w-full mb-3">
