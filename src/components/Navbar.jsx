@@ -45,7 +45,7 @@ const Navbar = () => {
                         </NavLink>
                         <ul
                             tabIndex={0}
-                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40 lg:border border-purple-600'>
+                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-md w-40 lg:border border-purple-600'>
                             <li>
                                 <Link to='/addService' className="hover:bg-purple-500 hover:text-white">Add Service</Link>
                             </li>

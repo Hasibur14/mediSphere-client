@@ -112,6 +112,14 @@ const PopularServices = () => {
                     ))
                 }
             </div>
+            <div>
+                <Link to='/allService' className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md hover:text-white text-center mt-10 md:ml-[350px] lg:ml-[700px]">
+                    <span className="w-full h-full bg-gradient-to-br from-purple-600 via-fuchsia-600 to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-fuchsia-600 group-hover:to-violet-500 absolute"></span>
+                    <span className="relative px-6 py-3 transition-all ease-out bg-white rounded-md group-hover:bg-opacity-0 duration-400">
+                        <span className="relative">Show All</span>
+                    </span>
+                </Link>
+            </div>
         </div>
     );
 };

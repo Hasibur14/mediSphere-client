@@ -2,17 +2,16 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
 
 
-const SingleService = () => {
+const ServiceDetails = () => {
 
     const service = useLoaderData()
-    const {_id, serviceName, serviceArea, image, price, description, providerEmail, providerImage, providerName } = service;
+    const { _id, serviceName, serviceArea, image, price, description, providerEmail, providerImage, providerName } = service;
 
     return (
         <div className="container mx-auto my-16 p-4 md:p-0">
             <section className="py-4 md:py-8 dark:bg-gray-100 dark:text-gray-900 shadow-md border rounded-md">
                 <div className="grid  grid-cols-1 px-6 mx-auto lg:px-6 md:grid-cols-2 md:divide-x-2">
                     <div className=" py-6 md:py-10 md:px-6 lg:px-20 space-y-4">
-                        <Link to='/'> <button className='flex  hover:bg-purple-500 hover:text-white px-3 py-3 rounded-md border border-purple-600 shadow-md'> <span className="text-xl mr-2"><IoArrowBackCircleOutline /></span>Back Home</button></Link>
                         <h1 className="text-3xl md:text-4xl font-bold">Consultation By</h1>
                         <h4 className="text-2xl mt-6 font-semibold"><span className="font-bold">Name:  </span>{providerName}</h4>
                         <div className="space-y-4 text-xl">
@@ -33,6 +32,7 @@ const SingleService = () => {
                                 <img className="md:w-52 h-56 rounded-md border-2 border-purple-600 p-2" src={providerImage} alt="" />
                             </div>
                         </div>
+                        <Link to='/'> <button className='flex hover:bg-purple-500 hover:text-white px-3 py-3 rounded-[3px] border border-purple-600 text-xl md:mt-36'> <span className="text-2xl mr-2"><IoArrowBackCircleOutline /></span>Back Home</button></Link>
                     </div>
                     <section className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
                         <div>
@@ -61,4 +61,4 @@ const SingleService = () => {
     );
 };
 
-export default SingleService;
+export default ServiceDetails;
