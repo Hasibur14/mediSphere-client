@@ -84,11 +84,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu-horizontal px-1 space-x-8 text-[16px] font-bold">
+                    <ul className="menu-horizontal px-1 space-x-8 text-[16px] lg:mr-36 font-bold">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar md:flex lg:flex space-x-2 lg:ml-36">
+                <div className="navbar md:flex lg:flex space-x-2 navbar-end lg:mr-80">
                     <div className="hidden lg:flex">
                         <div className="mr-4 mt-1 ">
                             {user && (
