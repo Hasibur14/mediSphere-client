@@ -27,7 +27,7 @@ const BookedService = () => {
 
     return (
         <div className="container mx-auto my-16 border rounded-md">
-             <Helmet>
+            <Helmet>
                 <title>BookedService || MediSphere</title>
             </Helmet>
             <div className="text-center p-4">
@@ -38,9 +38,9 @@ const BookedService = () => {
                     <div className="text-center p-4">
                         <p className=" dark:text-white text-xl italic">No booked services found.</p>
                         <div className="items-center text-center justify-center">
-                        <img className="w-60 md:ml-64 lg:ml-[640px] p-10" src={notFoundImg} alt="" />
+                            <img className="w-60 md:ml-64 lg:ml-[640px] p-10" src={notFoundImg} alt="" />
                         </div>
-                     
+
                     </div>
                 ) : (
                     <div className="-m-1.5 overflow-x-auto">
@@ -56,6 +56,7 @@ const BookedService = () => {
                                             <th scope="col" className="px-6 py-3 text-start text-xs font-semibold text-white uppercase dark:text-neutral-500">Price</th>
                                             <th scope="col" className="px-6 py-3 text-start text-xs font-semibold text-white uppercase dark:text-neutral-500">Date</th>
                                             <th scope="col" className="px-6 py-3 text-end text-xs font-semibold text-white uppercase dark:text-neutral-500">status</th>
+                                            
                                         </tr>
                                     </thead>
                                     {bookedServices.map((item, index) => (
@@ -79,8 +80,24 @@ const BookedService = () => {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
                                                     {formatDate(item.serviceDate)}
                                                 </td>
-                                                <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                    <button type="button" className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">{item.status}</button>
+                                                <td className='text-sm font-medium text-gray-700 whitespace-nowrap'>
+                                                    <div
+                                                        className={`inline-flex items-center px-3 py-1 rounded-full gap-x-2
+                                                         ${item.status === 'pending' && 'bg-orange-100/60 text-orange-500'}
+                                                             ${item.status === 'working' && 'bg-blue-100/60 text-blue-500'} 
+                                                            ${item.status === 'completed' && 'bg-emerald-100/60 text-emerald-500'}`}
+                                                    >
+                                                        <span
+                                                            className={`h-1.5 w-1.5 rounded-full 
+                                                            ${item.status === 'pending' && 'bg-orange-500'
+                                                                } 
+                                                                ${item.status === 'working' && 'bg-blue-500'
+                                                                }
+                                                                ${item.status === 'completed' && 'bg-green-500'} `}>
+
+                                                        </span>
+                                                        <h2 className='text-sm font-normal '>{item.status}</h2>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
