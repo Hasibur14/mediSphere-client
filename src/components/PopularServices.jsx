@@ -1,9 +1,11 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { TbDetailsOff } from "react-icons/tb";
 import { Link } from "react-router-dom";
-
+AOS.init();
 
 const PopularServices = () => {
 
@@ -25,13 +27,16 @@ const PopularServices = () => {
 
     return (
         <div className="container mx-auto my-10">
-            <div className="text-center justify-center my-10">
+            <div className="text-center justify-center my-10 space-y-4"
+                data-aos="flip-up"
+                data-aos-duration="3000">
                 <h2 className="md:text-5xl font-bold ">Popular Service</h2>
+                <p className="text-lg">Especially relevant in recent times, telemedicine allows patients to consult with doctors remotely via video calls, providing <br /> convenient access to healthcare without the need for in-person visits.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-24 p-4 md:p-0">
                 {
                     services.slice(0, 6).map(service => (
-                        <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5] hover:scale-105 transition duration-300" data-aos="fade-up"
+                        <div key={service._id} className="w-ful border shadow-lg rounded-xl p-6 dark:bg-[#1a2641d5] hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-duration="3000"
                             data-aos-anchor-placement="center-bottom">
                             <div className="flex flex-col">
                                 <div className="relative h-62 w-full mb-3">
@@ -112,10 +117,10 @@ const PopularServices = () => {
                     ))
                 }
             </div>
-            <div className="">
-                <Link to='/allService' className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md hover:text-white text-center mt-10 ml-28 md:ml-[350px] lg:ml-[700px] ">
+            <div className="" data-aos="flip-left">
+                <Link to='/allService' className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md hover:text-white text-center mt-10 ml-28 md:ml-[400px] lg:ml-[700px] ">
                     <span className="w-full h-full bg-gradient-to-br from-purple-600 via-fuchsia-600 to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-fuchsia-600 group-hover:to-violet-500 absolute"></span>
-                    <span className="relative px-6 py-3 transition-all ease-out bg-white rounded-md group-hover:bg-opacity-0 duration-400">
+                    <span className="relative px-6 py-3 transition-all ease-out bg-white rounded-md group-hover:bg-opacity-0 duration-400 dark:text-black">
                         <span className="relative">Show All</span>
                     </span>
                 </Link>

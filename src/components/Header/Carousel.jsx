@@ -7,6 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import bannerImg1 from '../../assets/images/banner-1.jpg';
 import bannerImg2 from '../../assets/images/banner-2.jpg';
 import bannerImg3 from '../../assets/images/banner-3.jpg';
+import bannerImg4 from '../../assets/images/banner/banner-4.jpg';
+import bannerImg5 from '../../assets/images/banner/banner-5.jpg';
+import bannerImg6 from '../../assets/images/banner/banner-6.png';
 
 
 const Carousel = () => {
@@ -38,6 +41,15 @@ const Carousel = () => {
 
                     <SwiperSlide>
                         <img className='lg:h-[520px] rounded-lg'  src={bannerImg3} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className='lg:h-[520px] rounded-lg'  src={bannerImg4} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className='lg:h-[520px] rounded-lg'  src={bannerImg5} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className='lg:h-[520px] rounded-lg'  src={bannerImg6} alt="" />
                     </SwiperSlide>
 
                 </Swiper>

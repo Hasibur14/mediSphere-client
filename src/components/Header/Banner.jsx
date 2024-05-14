@@ -10,7 +10,7 @@ const Banner = () => {
             <div className='relative mt-16'>
                 <div className="container mx-auto px-4 lg:px-0">
                     <div className="lg:flex items-center">
-                        <div className='lg:w-1/2 mb-5 lg:mb-0 space-y-4'>
+                        <div className='lg:w-1/2 mb-5 lg:mb-0 space-y-4' data-aos="fade-up" data-aos-duration="3000">
                             <div className="w-3/5">
                                 <h1 className="text-2xl lg:text-5xl font-extrabold"><span className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient">Your New Life Starts Here!</span></h1>
                             </div>
@@ -26,7 +26,9 @@ const Banner = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="lg:w-1/2">
+                        <div className="lg:w-1/2"
+                            data-aos="flip-down"
+                            data-aos-duration="3000">
                             <Carousel></Carousel>
                         </div>
                     </div>

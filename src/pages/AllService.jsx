@@ -58,7 +58,9 @@ const AllService = () => {
             </div>
             <div className="grid grid-cols-1 gap-6 p-4 lg:p-0">
                 {services.map(service => (
-                    <section key={service._id} className="border-2 rounded-lg hover:scale-105 transition duration-300">
+                    <section key={service._id} className="border-2 rounded-lg hover:scale-105 transition duration-300" 
+                    data-aos="zoom-out-up"
+                    data-aos-duration="1500">
                         <div className="md:flex space-x-4 lg:space-x-16 p-3">
                             <div className="md:w-3/12 ">
                                 <img className="rounded-xl w-full h-44" src={service.image} alt="" />

@@ -4,7 +4,7 @@ import './contact.css';
 const Contact = () => {
     return (
         <section>
-            <div className='text-center contact py-10 p-4'>
+            <div className='text-center contact mb-24 p-4'>
                 <fieldset className='border container mx-auto py-20 lg:max-w-2xl'>
                     <legend className='text-fuchsia-500 text-xl font-bold'>Contact Us</legend>
                     <h1 className="text-3xl text-white mb-8">Stay connected with us</h1>

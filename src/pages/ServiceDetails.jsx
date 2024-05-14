@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
 
-
 const ServiceDetails = () => {
 
     const service = useLoaderData()
@@ -10,12 +9,15 @@ const ServiceDetails = () => {
 
     return (
         <div className="container mx-auto my-16 p-4 md:p-0">
-             <Helmet>
+            <Helmet>
                 <title>ServiceDetails || MediSphere</title>
             </Helmet>
             <section className="py-4 md:py-8 dark:bg-gray-100 dark:text-gray-900 shadow-md border rounded-md">
                 <div className="grid  grid-cols-1 px-6 mx-auto lg:px-6 md:grid-cols-2 md:divide-x-2">
-                    <div className=" py-6 md:py-10 md:px-6 lg:px-20 space-y-4">
+                    <div className=" py-6 md:py-10 md:px-6 lg:px-20 space-y-4"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                         <h1 className="text-3xl md:text-4xl font-bold">Consultation By</h1>
                         <h4 className="text-2xl mt-6 font-semibold"><span className="font-bold">Name:  </span>{providerName}</h4>
                         <div className="space-y-4 text-xl">
@@ -33,12 +35,22 @@ const ServiceDetails = () => {
                                 <span>{providerEmail}</span>
                             </p>
                             <div>
-                                <img className="md:w-52 h-56 rounded-md border-2 border-purple-600 p-2" src={providerImage} alt="" />
+                                <img className="md:w-52 h-56 rounded-md border-2 border-purple-600 p-2  mb-8 md:mb-44" src={providerImage} alt="" />
                             </div>
                         </div>
-                        <Link to='/'> <button className='flex hover:bg-purple-500 hover:text-white px-3 py-3 rounded-[3px] border border-purple-600 text-xl md:mt-36'> <span className="text-2xl mr-2"><IoArrowBackCircleOutline /></span>Back Home</button></Link>
+                        <Link to='/' class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-slate-50 rounded hover:bg-white group ">
+                            <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                            <span className="relative flex w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
+                            <span className="text-2xl mr-2 "><IoArrowBackCircleOutline /></span>
+                            BACK HOME
+                            </span>
+                        </Link>
                     </div>
-                    <section className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+                    <section className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
+                        data-aos="fade-left"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="500">
                         <div>
                             <img className="w-full md:h-[400px] rounded-md" src={image} alt="image not found..." />
                         </div>
@@ -50,8 +62,8 @@ const ServiceDetails = () => {
                                 <p> <span className="font-bold">Location: </span>{service.serviceArea}</p>
                             </div>
                             <div>
-                                <Link to={`/service/${_id}`} className="inline-flex overflow-hidden text-white bg-gray-900 rounded group">
-                                    <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-purple-600 flex items-center justify-center">
+                                <Link to={`/service/${_id}`} className="inline-flex overflow-hidden text-white bg-gray-700 rounded group">
+                                    <span className="px-3.5 py-2 text-white bg-purple-500 group-hover:bg-fuchsia-500 flex items-center justify-center">
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                                     </span>
                                     <span className="pl-4 pr-5 py-2.5">Book Now</span>

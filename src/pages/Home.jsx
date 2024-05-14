@@ -9,7 +9,7 @@ import Contact from "../components/contact/Contact";
 
 const Home = () => {
     return (
-        <div className="mt-7">
+        <div className="mt-7 spacey">
             <Helmet>
                 <title>Home || MediSphere</title>
             </Helmet>
