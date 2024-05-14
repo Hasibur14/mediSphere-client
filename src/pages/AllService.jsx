@@ -7,25 +7,55 @@ import { Link } from "react-router-dom";
 const AllService = () => {
 
     const [services, setServices] = useState([]);
+    const [search, setSearch] = useState('')
+    const [searchText, setSearchText] = useState('')
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios(`${import.meta.env.VITE_API_URL}/services`);
+                const { data } = await axios(`${import.meta.env.VITE_API_URL}/services?&search=${search}`);
                 setServices(data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
         getData();
-    }, []);
+    }, [search]);
+
+
+    const handleSearch = e => {
+        e.preventDefault()
+        setSearch(searchText)
+    }
+ 
+    console.log(search)
+
 
 
     return (
         <div className="container mx-auto my-10">
-             <Helmet>
+            <Helmet>
                 <title>AllService || MediSphere</title>
             </Helmet>
+            <div className="w-[350px] mt-20 mb-10 mx-auto">
+                <form onSubmit={handleSearch}>
+                    <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-fuchsia-600 focus-within:ring-fuchsia-300'>
+                        <input
+                            className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            type='text'
+                            onChange={e => setSearchText(e.target.value)}
+                            value={searchText}
+                            name='search'
+                            placeholder='Enter Service Title'
+                            aria-label='Enter Service Title'
+                        />
+
+                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-purple-600 rounded-md hover:bg-fuchsia-500 focus:bg-gradient-to-r from-fuchsia-500 to-purple-500 border-fuchsia-600 focus:outline-none'>
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
             <div className="grid grid-cols-1 gap-6 p-4 lg:p-0">
                 {services.map(service => (
                     <section key={service._id} className="border-2 rounded-lg hover:scale-105 transition duration-300">

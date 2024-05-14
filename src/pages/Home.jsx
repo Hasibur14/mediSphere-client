@@ -5,6 +5,7 @@ import Banner from "../components/Header/Banner";
 import PatientsFeedback from "../components/PatientsFeedback";
 import PopularServices from "../components/PopularServices";
 import WorkingProcess from "../components/WorkingProcess";
+import Contact from "../components/contact/Contact";
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <Appointment></Appointment>
             <WorkingProcess></WorkingProcess>
             <PatientsFeedback></PatientsFeedback>
+            <Contact></Contact>
         </div>
     );
 };

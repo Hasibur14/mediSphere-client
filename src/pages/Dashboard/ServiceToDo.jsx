@@ -2,8 +2,10 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
+import { IoIosArrowDropdown } from "react-icons/io";
 import notFoundImg from '../../assets/images/not- found.png';
 import { AuthContext } from "../../provider/AuthProvider";
+
 
 const ServiceToDo = () => {
     const { user } = useContext(AuthContext);
@@ -57,7 +59,7 @@ const ServiceToDo = () => {
                 ) : (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {books.map(item => (
-                            <div key={item._id} className="max-w-2xl px-8 py-4 bg-white rounded-lg border dark:bg-gray-800">
+                            <div key={item._id} className="max-w-2xl px-8 py-4  rounded-lg border dark:bg-gray-800 md:w-[450px]">
                                 <div className="flex items-center justify-between">
                                     <span className="text-sm font-light text-gray-600 dark:text-gray-400">
                                         {formatDate(item.serviceDate)}
@@ -70,10 +72,14 @@ const ServiceToDo = () => {
                                     <p className="mt-2 text-gray-600 dark:text-gray-300"> <span className="font-bold">Instructions: </span>  {item.instructions}</p>
                                 </div>
 
-                                <div className="flex justify-between">
-                                    <div className="flex items-center justify-between mt-4">
+                                <div className="flex justify-between mt-4">
+                                    <div className="items-center">
+                                        <a className="font-semibold text-gray-700 cursor-pointer dark:text-gray-200" tabIndex="0" role="link">{item.userName}</a>
+                                        <p className="font-semibold text-gray-700 cursor-pointer dark:text-gray-200">{item.userEmail}</p>
+                                    </div>
+                                    <div className=" mt-4">
                                         <div className="dropdown">
-                                            <div tabIndex={0} role="button" className="btn bg-fuchsia-500 text-white m-1">{item.status || 'Pending'}</div>
+                                            <div tabIndex={0} role="button" className="btn  bg-fuchsia-500 text-white m-1">{item.status || 'Pending'}  <IoIosArrowDropdown className="text-xl" /></div>
                                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                                 <li>
                                                     <button
@@ -93,10 +99,6 @@ const ServiceToDo = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div className="items-center">
-                                        <a className="font-semibold text-gray-700 cursor-pointer dark:text-gray-200" tabIndex="0" role="link">{item.userName}</a>
-                                        <p className="font-semibold text-gray-700 cursor-pointer dark:text-gray-200">{item.userEmail}</p>
                                     </div>
                                 </div>
                             </div>
