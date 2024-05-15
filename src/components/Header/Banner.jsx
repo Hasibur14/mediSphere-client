@@ -6,7 +6,7 @@ import Carousel from './Carousel';
 const Banner = () => {
     return (
         <div className='relative lg:h-[850px] border-t'>
-            <img src={bgImg} alt="" className="absolute  w-full h-[800px] object-cover " />
+            <img src={bgImg} alt="" className="absolute  w-full h-[850px] object-cover " />
             <div className='relative mt-16'>
                 <div className="container mx-auto px-4 lg:px-0">
                     <div className="lg:flex items-center">

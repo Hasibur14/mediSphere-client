@@ -14,7 +14,7 @@ import fcImg10 from '../assets/images/category/radiologist.png';
 
 const FeatureCategory = () => {
     return (
-        <div className='container mx-auto my-20'>
+        <div className='container mx-auto my-20 mt-32'>
             <div className='text-center my-10'
                 data-aos="flip-up"
                 data-aos-duration="2000">

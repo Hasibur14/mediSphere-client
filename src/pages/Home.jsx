@@ -9,17 +9,19 @@ import Contact from "../components/contact/Contact";
 
 const Home = () => {
     return (
-        <div className="mt-7 spacey">
+        <div className="mt-7">
             <Helmet>
                 <title>Home || MediSphere</title>
             </Helmet>
-            <Banner></Banner>
+           <div className="">
+           <Banner></Banner>
             <FeatureCategory></FeatureCategory>
             <PopularServices></PopularServices>
             <Appointment></Appointment>
             <WorkingProcess></WorkingProcess>
             <PatientsFeedback></PatientsFeedback>
             <Contact></Contact>
+           </div>
         </div>
     );
 };

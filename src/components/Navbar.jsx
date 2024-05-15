@@ -92,7 +92,7 @@ const Navbar = () => {
                     <div className="hidden lg:flex">
                         <div className="mr-4 mt-1 ">
                             {user && (
-                                <div className="tooltip  tooltip-primary" data-tip={user.displayName}>
+                                <div className="tooltip tooltip-warning tooltip-bottom" data-tip={user.displayName}>
                                     <div className="rounded-full border border-red-600"><img className="rounded-full w-10 h-10" src={user.photoURL} alt="image is not found" /></div>
                                 </div>
                             )}

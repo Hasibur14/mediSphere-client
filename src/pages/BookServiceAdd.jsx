@@ -56,8 +56,8 @@ const BookServiceAdd = () => {
                     <img src={bgImg} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className='flex justify-center items-center relative '>
-                    <section className="container p-10  mx-auto rounded-md shadow-md bg-opacity-40 bg-gray-600 mt-10">
-                        <h2 className="text-3xl font-bold capitalize text-center bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient ">BOOK SERVICE </h2>
+                    <section className="container p-10  mx-auto rounded-md shadow-md bg-opacity-40 bg-gray-400 mt-10">
+                        <h2 className="text-3xl font-bold capitalize text-center bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 bg-300% text-transparent bg-clip-text animate-gradient ">BOOK APPOINTMENT</h2>
                         <form onSubmit={handleServiceBook}>
                             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                                 <div>
@@ -164,7 +164,7 @@ const BookServiceAdd = () => {
                                 </div>
                             </div>
                             <div className="flex justify-center mt-6">
-                                <button className="btn px-14 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 rounded-md hover:bg- focus:outline-none focus:bg-gray-600">Purchase</button>
+                                <button className="btn px-14 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600 rounded-md hover:bg- focus:outline-none focus:bg-gray-600">APPOINTMENT</button>
                             </div>
                         </form>
                     </section>

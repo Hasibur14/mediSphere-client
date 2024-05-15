@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import loginImg from '../../assets/images/login.jpg';
+import loginImg from '../../assets/images/banner/user-login-D4UHRM9E5G.svg';
 import titleImg from '../../assets/images/title.png';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../provider/AuthProvider';
@@ -62,11 +62,11 @@ const Login = () => {
 
 
     return (
-        <div className='flex  justify-center items-center dark:bg-gray-800 my-16'>
+        <div className='flex  justify-center items-center dark:bg-gray-800 md:mt-24'>
              <Helmet>
                 <title>Login || MediSphere</title>
             </Helmet>
-            <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+            <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-5xl '>
                 <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'
                     style={{
@@ -154,7 +154,8 @@ const Login = () => {
                                     className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
                                     type={showPassword ? "text" : "password"}
                                     name="password"
-                                    id="" required />
+                                    id="" 
+                                    required />
                                 <span className="absolute top-3 right-2" onClick={() => setShowPassword(!showPassword)}>
                                     {
                                         showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
