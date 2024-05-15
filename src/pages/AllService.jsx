@@ -46,8 +46,8 @@ const AllService = () => {
                             onChange={e => setSearchText(e.target.value)}
                             value={searchText}
                             name='search'
-                            placeholder='Search here...'
-                            aria-label='Search here....'
+                            placeholder='Enter the Service Title'
+                            aria-label='Enter the Service Title'
                         />
 
                         <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-purple-600 rounded-md hover:bg-fuchsia-500 focus:bg-gradient-to-r from-fuchsia-500 to-purple-500 border-fuchsia-600 focus:outline-none'>
