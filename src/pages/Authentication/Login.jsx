@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import loginImg from '../../assets/images/banner/user-login-D4UHRM9E5G.svg';
+import loginImg from '../../assets/images/banner/login1.png';
 import titleImg from '../../assets/images/title.png';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../provider/AuthProvider';
