@@ -60,10 +60,9 @@ const PopularServices = () => {
                                     </div>
                                     <div className=" h-[220px] w-full rounded-2xl dark:bg-[#0F172A]">
                                         <img
-
                                             src={service.image}
                                             alt=""
-                                            className=" w-full h-full object-fill rounded-xl"
+                                            className=" w-full h-full object-fill rounded-xl hover:scale-105"
                                         />
                                     </div>
                                 </div>
@@ -103,8 +102,8 @@ const PopularServices = () => {
 
                                     <div className="flex space-x-2 text-sm font-medium justify-start mt-3">
 
-                                        <Link to=''
-                                            className="transition flex-1 ease-in duration-300 bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600  hover:bg-gray-800 border hover:border-gray-500  hover:text-white  hover:shadow-lg text-white rounded py-2 md:py-1 text-center  flex justify-center items-center px-4 font-medium text-sm">
+                                        <Link to={`/services/${service._id}`}
+                                            className="transition flex-1 ease-in duration-300 bg-gradient-to-r from-purple-500 to-fuchsia-600 border-purple-600  hover:shadow-lg text-white rounded py-2 md:py-1 text-center  flex justify-center items-center px-4 font-medium text-sm hover:scale-105">
                                             <span className=" mr-2">
                                                 <TbDetailsOff />
                                             </span>
