@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import notFoundImg from '../../assets/images/banner/notf.jpg';
+import PaymentModal from "../../components/PaymentModal";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const BookedService = () => {
     const { user } = useContext(AuthContext) || {};
     const [bookedServices, setBookedServices] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
 
     useEffect(() => {
         if (user?.email) {
@@ -24,13 +27,23 @@ const BookedService = () => {
         return date.toLocaleDateString('en-US', options);
     };
 
+    const closeModal = () => {
+        setIsOpen(false);
+        setSelectedService(null);
+    };
+
+    const openModal = (service) => {
+        setSelectedService(service);
+        setIsOpen(true);
+    };
+
     return (
         <div className="container mx-auto my-16 border rounded-md">
             <Helmet>
                 <title>BookedService || MediSphere</title>
             </Helmet>
             <div className="text-center p-4">
-                <h2 className="text-3xl font-bold ">Booked service</h2>
+                <h2 className="text-3xl font-bold">Booked service</h2>
             </div>
             <div className="flex flex-col">
                 {bookedServices.length === 0 ? (
@@ -84,8 +97,11 @@ const BookedService = () => {
                                                         <h2 className='text-sm font-normal'>{item.status}</h2>
                                                     </div>
                                                 </td>
-                                                <td className="text-center flex px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200 ">
-                                                    <button className="btn btn-sm bg-green-500 hover:bg-green-600 text-white hover:scale-105">
+                                                <td className="text-center flex px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                    <button
+                                                        className="btn btn-sm bg-green-500 hover:bg-green-600 text-white hover:scale-105"
+                                                        onClick={() => openModal(item)}
+                                                    >
                                                         <RiSecurePaymentFill className="text-lg text-white" />
                                                         <span>Pay</span>
                                                     </button>
@@ -99,6 +115,11 @@ const BookedService = () => {
                     </div>
                 )}
             </div>
+            <PaymentModal
+                isOpen={isOpen}
+                closeModal={closeModal}
+                service={selectedService}
+            />
         </div>
     );
 };
