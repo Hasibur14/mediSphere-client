@@ -72,6 +72,8 @@ const CheckoutForm = ({ closeModal, service }) => {
 
         if (paymentIntent.status === 'succeeded') {
             toast.success('Payment successful')
+            closeModal(true)
+
         }
 
         setProcessing(false)
